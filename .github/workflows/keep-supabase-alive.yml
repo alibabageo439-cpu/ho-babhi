@@ -2,8 +2,8 @@ name: Keep Supabase Projects Alive
 
 on:
   schedule:
-    - cron: '0 0 */2 * *'
-  workflow_dispatch:
+    - cron: '0 0 */2 * *'      # Har 2 din mein 12:00 AM UTC
+  workflow_dispatch:             # Manual run ke liye
 
 jobs:
   ping_supabase:
@@ -17,18 +17,18 @@ jobs:
 
       - name: Ping Project 2
         run: |
-          curl -X GET "https://knvotyfgzowdehvsvfgz.supabase.co/rest/v1/" \
+          curl -X GET "https://omhdaoeuyjwzxoypquqz.supabase.co/rest/v1/" \
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_2 }}" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_2 }}"
 
       - name: Ping Project 3
         run: |
-          curl -X GET "https://knvotyfgzowdehvsvfgz.supabase.co/rest/v1/" \
+          curl -X GET "https://zmizfbmmgxxllvqlnast.supabase.co/rest/v1/" \
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_3 }}" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_3 }}"
 
       - name: Ping Project 4
         run: |
-          curl -X GET "https://knvotyfgzowdehvsvfgz.supabase.co/rest/v1/" \
+          curl -X GET "https://tphsfiyeqzvalmtkhhzj.supabase.co/rest/v1/" \
             -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_4 }}" \
             -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_4 }}"
