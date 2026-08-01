@@ -1,10 +1,9 @@
-name: Keep Supabase Projects Alive
+\name: Keep Supabase Projects Alive
 
 on:
   schedule:
-    # Har 2 din mein chale ga (midnight UTC)
     - cron: '0 0 */2 * *'
-  workflow_dispatch: # Manual trigger ke liye
+  workflow_dispatch:
 
 jobs:
   ping_supabase:
@@ -12,24 +11,24 @@ jobs:
     steps:
       - name: Ping Project 1
         run: |
-          curl -X GET "https://knvotyfgzowdehvsvfgz.supabase.co/rest/v1/" \
-            -H "apikey: sb_publishable_bribuFIcTF3X2PhdqWTG5Q_KuRNnC2m" \
-            -H "Authorization: Bearer sb_publishable_bribuFIcTF3X2PhdqWTG5Q_KuRNnC2m"
+          curl -X GET "${{ secrets.SUPABASE_URL_1 }}/rest/v1/" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_1 }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_1 }}"
 
       - name: Ping Project 2
         run: |
-          curl -X GET "https://knvotyfgzowdehvsvfgz.supabase.co/rest/v1/" \
-            -H "apikey: sb_publishable_nz2GDZj7lB4STIKbKoYa9w_Gin0zWRj" \
-            -H "Authorization: Bearer sb_publishable_nz2GDZj7lB4STIKbKoYa9w_Gin0zWRj"
+          curl -X GET "${{ secrets.SUPABASE_URL_2 }}/rest/v1/" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_2 }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_2 }}"
 
       - name: Ping Project 3
         run: |
-          curl -X GET "https://knvotyfgzowdehvsvfgz.supabase.co/rest/v1/" \
-            -H "apikey: sb_publishable_g3MePq5qGLgQ8tLUURbZbg_yqHZ7cgG" \
-            -H "Authorization: Bearer sb_publishable_g3MePq5qGLgQ8tLUURbZbg_yqHZ7cgG"
+          curl -X GET "${{ secrets.SUPABASE_URL_3 }}/rest/v1/" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_3 }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_3 }}"
 
       - name: Ping Project 4
         run: |
-          curl -X GET "https://knvotyfgzowdehvsvfgz.supabase.co/rest/v1/" \
-            -H "apikey: sb_publishable_6sv1VtrU9E8lElSQ32_F1A_Z-xFXqyi" \
-            -H "Authorization: Bearer sb_publishable_6sv1VtrU9E8lElSQ32_F1A_Z-xFXqyi"
+          curl -X GET "${{ secrets.SUPABASE_URL_4 }}/rest/v1/" \
+            -H "apikey: ${{ secrets.SUPABASE_ANON_KEY_4 }}" \
+            -H "Authorization: Bearer ${{ secrets.SUPABASE_ANON_KEY_4 }}"
